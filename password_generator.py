@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
     # Convert to an integer for clarity
     bits_entropy = int(bits_entropy)
-    qubits = int(np.ceil(np.log2(bits_entropy)))  # log2(n) qubits required to solve
+    qubits = int(np.ceil(np.log2(bits_entropy)))  # log2(n) qubits required to solve? TODO: Verify this
 
     # Calculate the years
     classical_years, quantum_years = calc_num_years_from_bits_entropy(

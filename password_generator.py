@@ -108,7 +108,7 @@ if __name__ == "__main__":
         bits_entropy = calculate_bits_entropy(num_options, num_words)
 
     # Strip extra whitespace
-    password.strip()
+    password = password.strip()
 
     # Convert to an integer for clarity
     bits_entropy = int(bits_entropy)
@@ -130,3 +130,12 @@ if __name__ == "__main__":
     print("#" * 30)
     print(f"The password is:\n{password}")
     print("#" * 30)
+
+    # Verify the password
+    num_verifications = 3
+    while num_verifications > 0:
+        if input("Please enter the password to verify:\n").strip().lower() == password.lower():
+            num_verifications -= 1
+            print("Password verified successfully. Remaining verifications:", num_verifications)
+        else:
+            print("Password verification failed. Remaining verifications:", num_verifications)

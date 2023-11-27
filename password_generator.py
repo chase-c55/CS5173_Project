@@ -51,7 +51,7 @@ def calc_num_years_from_bits_entropy(
 
 if __name__ == "__main__":
     COMPLEX_DICTIONARY = "/usr/share/dict/words"
-    COMMON_DICTIONARY = "/usr/share/dict/words"  # TODO: Add a common dictionary
+    COMMON_DICTIONARY = "./30k.txt"
 
     min_entropy = 256  # Default to 256 bits of entropy
     checks_per_second = 10e18  # A quintillion checks per second (Fastest classical supercomputer) - Frontier
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
     # Convert to an integer for clarity
     bits_entropy = int(bits_entropy)
-    qubits = int(np.ceil(np.log2(bits_entropy)))  # log2(n) qubits required to solve? TODO: Verify this
+    qubits = int(np.ceil(np.log2(bits_entropy)))  # Assumption: log2(n) qubits required to solve, in reality much more complex
 
     # Calculate the years
     classical_years, quantum_years = calc_num_years_from_bits_entropy(
